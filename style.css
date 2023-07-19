@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.mainpage-content-opener {
+    width: 100%;
+    height: 40vh;
+    border: none;
+    border-radius: 1rem;
+    font-size: 2em;
+    transition: 500ms;
+}
+
+#main-page-buttons {
+    z-index: -1;
+}
+
+#mainpage-about-button {
+    background-color: #ffdeb8;
+    border: 2px solid #ffdeb8;
+}
+
+#mainpage-about-button:hover {
+    border: 3px solid #ffaf54;
+}
+
+#mainpage-projects-button {
+    background-color: #bfd5ff;
+    border: 2px solid #bfd5ff;
+}
+
+#mainpage-projects-button:hover {
+    border: 3px solid #5b94ff;
+}
+
+#mainpage-skills-button {
+    background-color: #ffb4bd;
+    border: 2px solid #ffb4bd;
+}
+
+#mainpage-skills-button:hover {
+    border: 3px solid #ff697a;
+}
+
+#mainpage-contact-button {
+    background-color: #c5ffd4;
+    border: 2px solid #c5ffd4;
+}
+
+#mainpage-contact-button:hover {
+    border: 3px solid #6dff94;
+}
