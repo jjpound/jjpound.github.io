@@ -24,37 +24,37 @@ h1 {
 }
 
 #mainpage-about-button {
-    background-color: #ffdeb8;
-    border: 2px solid #ffdeb8;
+    background-color: #f48a1f;
+    border: 2px solid #f48a1f;
 }
 
 #mainpage-about-button:hover {
-    border: 3px solid #ffaf54;
+    border: 3px solid #ffdcb7;
 }
 
 #mainpage-projects-button {
-    background-color: #bfd5ff;
-    border: 2px solid #bfd5ff;
+    background-color: #53a0f7;
+    border: 2px solid #53a0f7;
 }
 
 #mainpage-projects-button:hover {
-    border: 3px solid #5b94ff;
+    border: 3px solid #bbd3ff;
 }
 
 #mainpage-skills-button {
-    background-color: #ffb4bd;
-    border: 2px solid #ffb4bd;
+    background-color: #ff3030;
+    border: 2px solid #ff3030;
 }
 
 #mainpage-skills-button:hover {
-    border: 3px solid #ff697a;
+    border: 3px solid #ffaeb7;
 }
 
 #mainpage-contact-button {
-    background-color: #c5ffd4;
-    border: 2px solid #c5ffd4;
+    background-color: #04c341;
+    border: 2px solid #04c341;
 }
 
 #mainpage-contact-button:hover {
-    border: 3px solid #6dff94;
+    border: 3px solid #c6ffd5;
 }
