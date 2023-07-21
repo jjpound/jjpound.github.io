@@ -19,9 +19,14 @@ function showButtons() {
 function openSection(section) {
     hideButtons()
     unselectedSections[section].classList.replace("unselected", "selected");
-    for(i = 0; i<3; i++) {
-        unselectedSections[i].removeAttribute("animate");
-    }
+    selectedSections[0].setAttribute("animate", "");
+    selectedSections[0].addEventListener(
+        "animationend",
+        () => {
+            selectedSections[0].removeAttribute("animate");
+        },
+        { once: true }
+    );
 }
 
 function closeSelectedWindow(section) {
@@ -35,15 +40,9 @@ function closeSelectedWindow(section) {
         { once: true }
     );
     showButtons();
-    for(i=0; i<3; i++) {
-        unselectedSections[i].setAttribute("animate", "");
-        selectedSections[0].setAttribute("animate", "");
-    }
 }
 
 function replaceSelectedWindow(section) {
-    selectedSections[0].removeAttribute("animate");
     selectedSections[0].classList.replace("selected", "unselected");
     unselectedSections[section].classList.replace("unselected", "selected");
-    unselectedSections[section].setAttribute("animate", "");
 }

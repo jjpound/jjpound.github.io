@@ -145,6 +145,7 @@ h1 {
     pointer-events: none;
     inset: 0;
     animation: closeDiv 500ms forwards;
+    overflow: hidden;
 }
 
 @keyframes fillDiv {
