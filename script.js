@@ -6,13 +6,29 @@ let hiddenButtons = document.getElementsByClassName("hidden");
 
 function hideButtons() {
     for(i = 0; i<4; i++) {
-        mainPageButtons[0].classList.replace("mainpage-content-opener", "hidden");
+        mainPageButtons[i].setAttribute("closing", "");
+        mainPageButtons[i].addEventListener(
+            "animationend",
+            () => {
+                mainPageButtons[0].removeAttribute("closing");
+                mainPageButtons[0].classList.replace("mainpage-content-opener", "hidden");
+            },
+            { once: true }
+        );
     }
 }
 
 function showButtons() {
     for(i = 0; i<4; i++) {
-        hiddenButtons[0].classList.replace("hidden", "mainpage-content-opener");
+        hiddenButtons[i].setAttribute("opening", "");
+        hiddenButtons[i].addEventListener(
+            "animationend",
+            () => {
+                hiddenButtons[0].removeAttribute("opening");
+                hiddenButtons[0].classList.replace("hidden", "mainpage-content-opener");
+            },
+            { once: true }
+        );
     }
 }
 
