@@ -205,4 +205,8 @@ h1 {
     #main-page-buttons {
         width: 100vw;
     }
+
+    .selected {
+        height: 90vh;
+    }
 }
