@@ -3,29 +3,71 @@
 }
 
 body {
-    padding: 20px;
+    padding: 20px 10% 20px 10%;
+    background-color: #06252d;
+    color: #f1fbfd;
+}
+
+button {
+    color: #f1fbfd;
 }
 
 h1 {
     margin: 0;
 }
 
-.mainpage-content-opener {
+.mainpage-content-opener, .hidden {
     width: 100%;
-    height: 40vh;
+    height: 200px;
     border: none;
     border-radius: 1rem;
     font-size: 2em;
     transition: 500ms;
 }
 
+.mainpage-content-opener {
+    animation-name: show-buttons;
+    animation-duration: 1000ms;
+}
+
+.hidden {
+    z-index: -1;
+    animation-name: hide-buttons;
+    animation-duration: 500ms;
+}
+
+@keyframes hide-buttons {
+    from {
+        opacity: 0.9;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes show-buttons {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#content-container {
+    position: relative;
+}
+
 #main-page-buttons {
     z-index: -1;
+    width: 500px;
 }
 
 #mainpage-about-button {
-    background-color: #f48a1f;
-    border: 2px solid #f48a1f;
+    background-color: #611985;
+    border: 2px solid #611985;
 }
 
 #mainpage-about-button:hover {
@@ -33,8 +75,8 @@ h1 {
 }
 
 #mainpage-projects-button {
-    background-color: #53a0f7;
-    border: 2px solid #53a0f7;
+    background-color: #274a9a;
+    border: 2px solid #274a9a;
 }
 
 #mainpage-projects-button:hover {
@@ -42,8 +84,8 @@ h1 {
 }
 
 #mainpage-skills-button {
-    background-color: #ff3030;
-    border: 2px solid #ff3030;
+    background-color: #D03F1C;
+    border: 2px solid #D03F1C;
 }
 
 #mainpage-skills-button:hover {
@@ -51,10 +93,112 @@ h1 {
 }
 
 #mainpage-contact-button {
-    background-color: #04c341;
-    border: 2px solid #04c341;
+    background-color: #678814;
+    border: 2px solid #678814;
 }
 
 #mainpage-contact-button:hover {
     border: 3px solid #c6ffd5;
+}
+
+#about-me, #about-me-opener {
+    background-color: #611985;
+    transition: background-color 500ms ease;
+}
+
+#projects, #projects-opener {
+    background-color: #274a9a;
+    transition: background-color 500ms ease;
+}
+
+#skills, #skills-opener {
+    background-color: #D03F1C;
+}
+
+#contact, #contact-opener {
+    background-color: #678814;
+}
+
+.unselected {
+    display: none;
+}
+
+.selected {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: clamp(500px, 80vh, 1200px);
+    border-radius: 1rem;
+    padding: 15px;
+}
+
+.selected[animate] {
+    animation-name: fillDiv;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in;
+    overflow: hidden;
+}
+
+.selected[closing] {
+    display: block;
+    pointer-events: none;
+    inset: 0;
+    animation: closeDiv 500ms forwards;
+}
+
+@keyframes fillDiv {
+    from {
+        height: 10%;
+        width: 10%;
+    }
+
+    to {
+        height: clamp(500px, 80vh, 1200px);
+        width: 100%;
+        visibility: none;
+    }
+}
+
+@keyframes closeDiv {
+    0% {
+        width: 100%;
+        height: clamp(500px, 80vh, 1200px);
+    }
+    100% {
+      width: 0;
+      height: 0;
+    }
+}
+
+.sidebar {
+    float: left;
+    height: 100%;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.back-button {
+    background-color: transparent;
+    border: none;
+}
+
+.sidebar > button {
+    font-size: 2em;
+    display: block;
+}
+
+.sidebar > button:hover {
+    border: 1px solid black;
+    background-color: white !important;
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        padding: 5px;
+    }
+
+    #main-page-buttons {
+        width: 100vw;
+    }
 }
